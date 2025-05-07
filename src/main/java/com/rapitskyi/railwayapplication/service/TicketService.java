@@ -182,15 +182,6 @@ public class TicketService {
         return new CarSeatInfo(carNumber, occupiedSeats, 50);
     }
 
-    public TicketStatistics getTicketStatistics(TicketStatisticsRequest request) {
-        TicketStatistics statistics = new TicketStatistics();
-        statistics.setTotalTickets(0L);
-        statistics.setTotalRevenue(0.0);
-        statistics.setRouteStatistics(List.of());
-        
-        return statistics;
-    }
-
     private String generateTicketNumber() {
         return "TKT-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
     }

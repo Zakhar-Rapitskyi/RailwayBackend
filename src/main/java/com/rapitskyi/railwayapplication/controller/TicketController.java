@@ -2,7 +2,6 @@ package com.rapitskyi.railwayapplication.controller;
 
 import com.rapitskyi.railwayapplication.dto.SearchDTOs.CarSeatInfo;
 import com.rapitskyi.railwayapplication.dto.SearchDTOs.TicketBookingRequest;
-import com.rapitskyi.railwayapplication.dto.SearchDTOs.TicketStatistics;
 import com.rapitskyi.railwayapplication.dto.SearchDTOs.TicketStatisticsRequest;
 import com.rapitskyi.railwayapplication.dto.TicketDTO;
 import com.rapitskyi.railwayapplication.service.TicketService;
@@ -65,11 +64,5 @@ public class TicketController {
             @RequestParam Integer carNumber) {
         
         return ResponseEntity.ok(ticketService.getAvailableSeats(scheduleId, carNumber));
-    }
-
-    @PostMapping("/statistics")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<TicketStatistics> getTicketStatistics(@Valid @RequestBody TicketStatisticsRequest request) {
-        return ResponseEntity.ok(ticketService.getTicketStatistics(request));
     }
 }

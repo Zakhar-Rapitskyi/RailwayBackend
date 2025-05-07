@@ -70,25 +70,5 @@ public class SearchDTOs {
         private LocalDate endDate;
 
         private Integer routeId;
-        private Integer departureStationId;
-        private Integer arrivalStationId;
-    }
-
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class TicketStatistics {
-        private Long totalTickets;
-        private Double totalRevenue;
-        private List<RouteStatistics> routeStatistics;
-    }
-
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class RouteStatistics {
-        private String routeName;
-        private Long ticketCount;
-        private Double occupancyRate;
     }
 }
